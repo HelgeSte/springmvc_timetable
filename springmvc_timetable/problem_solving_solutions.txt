@@ -1,0 +1,7 @@
+1. To solve a 'No mapping for GET /WEB-INF/jsp/index.jsp' when trying to access home, I had
+   to add this 'tomcat-embed-jasper' dependency:
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+    <scope>provided</scope>
+</dependency>
