@@ -17,7 +17,7 @@ public class Customer {
         this.contactEmail = contactEmail;
     }
 
-    Customer(){}
+    public Customer(){}
 
     public long getCustomerId() {
         return customerId;

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,19 +33,14 @@
     <p>We support and encourage <em>active and healthy</em> lifestyles, by offering <em>ethically sourced</em> and <em>eco-friendly</em> nutritional products for the <em>performance-driven</em> athlete.</p>
   </div>container tagline -->
 	</header>
-	<table>
-	    <tr>
-	        <td>Customer name</td>
-	        <td>Contact name</td>
-	        <td>Contact email</td>
-	    </tr>
-	    <tr>
-	        <td>Telsa</td>
-	        <td>Elon Musk</td>
-	        <td>elon.musk@tesla.com</td>
-	    </tr>
-	</table>
-    <p><a href="addcustomer">Add a customer</a></p>
+    <h1>Add a customer</h1>
+    <form:form method="post" action="/createcustomer" modelAttribute="newcustomer">
+        <label>Customer name:</label><form:input path="customerName" type="text" />
+        <label>Contact name:</label><form:input path="contactName" type="text" />
+        <label>Contact E-mail</label><form:input path="contactEmail" type="text" />
+        <input type="submit" value="ADD CUSTOMER" id="submit" />
+    </form:form>
+    <div><a href="/customers">Cancel</a></div>
 
 </body>
 </html>
