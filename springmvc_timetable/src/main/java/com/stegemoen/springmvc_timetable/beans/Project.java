@@ -9,6 +9,7 @@ public class Project {
     private long projectId;
     private String projectName;
     private String description;
+    private String customer;
     private String projectManager;
 
     public Project(long projectId, String projectName, String description, String projectManager) {
@@ -18,7 +19,7 @@ public class Project {
         this.projectManager = projectManager;
     }
 
-    Project(){}
+    public Project(){} // public, since the classes are in different packages
 
     public long getProjectId() {
         return projectId;
@@ -52,12 +53,21 @@ public class Project {
         this.projectManager = projectManager;
     }
 
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
     @Override
     public String toString() {
         return "Project{" +
                 "projectId=" + projectId +
                 ", projectName='" + projectName + '\'' +
                 ", description='" + description + '\'' +
+                ", customer='" + customer + '\'' +
                 ", projectManager='" + projectManager + '\'' +
                 '}';
     }

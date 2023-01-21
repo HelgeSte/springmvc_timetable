@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     	<header id="home" class="header">
@@ -18,12 +17,11 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-				    <li><a href="#">home</a></li>
-					<li><a href="#">users</a></li>
-					<li><a href="#">customers</a></li>
-					<li><a href="#">projects</a></li>
-
-				</ul>
+                          <li><a href="/home">home</a></li>
+                        <li><a href="/users">users</a></li>
+                        <li><a href="/customers">customers</a></li>
+                        <li><a href="/projects">projects</a></li>
+            	</ul>
 				<!-- navbar -->
 			</div>
 			<!-- container nav-elements -->
@@ -34,13 +32,22 @@
     <p>We support and encourage <em>active and healthy</em> lifestyles, by offering <em>ethically sourced</em> and <em>eco-friendly</em> nutritional products for the <em>performance-driven</em> athlete.</p>
   </div>container tagline -->
 	</header>
-    <h1>Add a project</h1>
-    <form:form>
-        <label>Project name:</label><form:input path="projectName" type="text" />
-        <label>Description:</label> <form:input path="description" type="text" />
-        <label>Project manager</label>  <form:input path="projectManager" type="text" />
-        <input type="submit" value="ADD PROJECT" />
-    </form>
+	 <h1>Projects</h1>
+        <table>
+            <tr>
+                <td>Project name</td>
+                <td>Description</td>
+                <td>Company</td>
+                <td>Project manager</td>
+            </tr>
+            <tr>
+                <td>Donald</td>
+                <td>Duck</td>
+                <td>d.duck@ducksburg.com</td
+            </tr>
+        </table>
+    <p><a href="/addproject">Add a project</a></p>
+
 
 </body>
 </html>

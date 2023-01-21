@@ -17,10 +17,10 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-				    <li><a href="#">home</a></li>
-					<li><a href="#">users</a></li>
-					<li><a href="#">customers</a></li>
-					<li><a href="#">projects</a></li>
+			      <li><a href="/home">home</a></li>
+                    <li><a href="/users">users</a></li>
+                    <li><a href="/customers">customers</a></li>
+                    <li><a href="/projects">projects</a></li>
 
 				</ul>
 				<!-- navbar -->
@@ -33,16 +33,6 @@
     <p>We support and encourage <em>active and healthy</em> lifestyles, by offering <em>ethically sourced</em> and <em>eco-friendly</em> nutritional products for the <em>performance-driven</em> athlete.</p>
   </div>container tagline -->
 	</header>
-    <h1>Add a customer</h1>
-    <form>
-        <label>First name:</label>
-        <input value="" type="text" />
-        <label>Last name:</label>
-        <input value="" type="text" />
-        <label>E-mail</label>
-        <input type="text" />
-        <input type="submit" value="ADD CUSTOMER" />
-    </form>
 
 </body>
 </html>

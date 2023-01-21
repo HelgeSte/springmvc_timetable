@@ -17,7 +17,7 @@ public class User {
         this.email = email;
     }
 
-    User(){}
+    public User(){}
 
     public long getUserId() {
         return userId;

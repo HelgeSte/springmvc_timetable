@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customers</title>
+    <title>Users</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -18,9 +19,9 @@
 				<!-- branding -->
 					<ul class="navbar">
                         <li><a href="/home">home</a></li>
-                        <li><a href="/users">users</a></li>
-                        <li><a href="/customers">customers</a></li>
-                        <li><a href="/projects">projects</a></li>
+                      <li><a href="/users">users</a></li>
+                      <li><a href="/customers">customers</a></li>
+                      <li><a href="/projects">projects</a></li>
                 	</ul>
 				<!-- navbar -->
 			</div>
@@ -32,19 +33,14 @@
     <p>We support and encourage <em>active and healthy</em> lifestyles, by offering <em>ethically sourced</em> and <em>eco-friendly</em> nutritional products for the <em>performance-driven</em> athlete.</p>
   </div>container tagline -->
 	</header>
-	<table>
-	    <tr>
-	        <td>Customer name</td>
-	        <td>Contact name</td>
-	        <td>Contact email</td>
-	    </tr>
-	    <tr>
-	        <td>Telsa</td>
-	        <td>Elon Musk</td>
-	        <td>elon.musk@tesla.com</td>
-	    </tr>
-	</table>
-    <p><a href="addcustomer">Add a customer</a></p>
+    <h1>Add a user</h1>
+    <form:form method="post" action="/createuser" modelAttribute="newuser">
+        <label>First name:</label><form:input path="firstName" type="text" />
+        <label>Last name:</label><form:input path="lastName" type="text" />
+        <label>E-mail</label><form:input path="email" type="text" />
+        <input type="submit" value="ADD USER" id="submit"/>
+    </form:form>
+    <div><a href="/users">Cancel</a></div>
 
 </body>
 </html>
