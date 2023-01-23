@@ -35,9 +35,9 @@
 	</header>
     <h1>Add a user</h1>
     <form:form method="post" action="/createuser" modelAttribute="newuser">
-        <label>First name:</label><form:input path="firstName" type="text" />
-        <label>Last name:</label><form:input path="lastName" type="text" />
-        <label>E-mail</label><form:input path="email" type="text" />
+        <label>First name:</label><form:input path="firstName" type="text" /><form:errors path="firstName" cssClass="error"/>
+        <label>Last name:</label><form:input path="lastName" type="text" /><form:errors path="lastName" cssClass="error"/>
+        <label>E-mail</label><form:input path="email" type="text" /><form:errors path="email" cssClass="error"/>
         <input type="submit" value="ADD USER" id="submit"/>
     </form:form>
     <div><a href="/users">Cancel</a></div>

@@ -35,8 +35,9 @@
 	</header>
     <h1>Add a project</h1>
     <form:form method="post" action="/createproject" modelAttribute="newproject">
-        <label>Project name:</label><form:input path="projectName" type="text" />
-        <label>Description:</label> <form:input path="description" type="text" />
+        <label>Project name:</label><form:input path="projectName" type="text" /><form:errors path="projectName" cssClass="error"/><br/>
+        <label>Description:</label> <form:input path="description" type="text" /><br/>
+        <label>Customer:</label><form:input path="customer" type="text"/><form:errors path="customer" cssClass="error"/><br/>
         <label>Project manager</label>  <form:input path="projectManager" type="text" />
         <input type="submit" value="ADD PROJECT" />
     </form:form>
