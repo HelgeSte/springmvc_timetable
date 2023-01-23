@@ -4,14 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // avoid duplicate id problem
     private long projectId;
+    @NotEmpty(message="{noname}")
     private String projectName;
     private String description;
+    @NotEmpty(message="{noname}")
     private String customer;
     private String projectManager;
 

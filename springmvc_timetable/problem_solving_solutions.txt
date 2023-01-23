@@ -24,3 +24,8 @@
             ....
            }
 --------------------------------------------------
+4. All table id's are increased, when an object is added to the database. If a user is added and
+   it gets id 14, then the id for the next object is 15, even if it's a project or a customer.
+   Have not found a solution yet, but think it can be solved by creating the dabases manually
+   with auto-increment.
+---------------------------------------------------------

@@ -4,14 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // avoid duplicate id problem
     private long customerId;
+    @NotEmpty(message="{noname}")
     private String customerName;
+    @NotEmpty(message="{noname}")
     private String contactName;
+    @Pattern(regexp = "^[a-z\\.]+@[a-z]+\\.[a-z]+", message="{invalid.email.address}")
     private String contactEmail;
 
     public Customer(String customerName, String contactName, String contactEmail) {
