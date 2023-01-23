@@ -46,6 +46,16 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- installed the following validator, because it's used in the
+		 	 lecture, from which I'm currently learning springmvc from -->
+		<!-- https://mvnrepository.com/artifact/javax.activation/javax.activation-api -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

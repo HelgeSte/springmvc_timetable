@@ -5,3 +5,22 @@
     <artifactId>tomcat-embed-jasper</artifactId>
     <scope>provided</scope>
 </dependency>
+------------------------
+2. Duplicate id=0:
+   Added an annotation to the User bean, that makes sure that user_id's are increased for each new user.
+--------------------------------------------------------------------
+3. Validation problem (binding problem): exception showing in the run console when validation fails, instead of showing
+   warning messages in the web form. First I had to add @Valid befor model and add 'BindingResult result'
+   between the @ModelAttribute and Modle parameters in the registerUser method in the UserController. After that
+   I had to add an if-statement that checked if the binding result contained any errors, and returned
+   the adduser page if it failed:
+
+   The registerUser method call (UserController.java):
+    public String registerUser(@Valid @ModelAttribute("newuser")User user,
+           BindingResult result, // Mandatory condition! Binding is the objects that holds the error messages
+           Model model){
+            ....
+            if(result.hasErrors()){return "register";}
+            ....
+           }
+--------------------------------------------------

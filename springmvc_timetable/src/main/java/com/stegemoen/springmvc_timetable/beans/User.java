@@ -1,14 +1,22 @@
 package com.stegemoen.springmvc_timetable.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO) // avoid duplicate id=0 problem
     private long userId;
+    @NotEmpty(message = "{noname}") // remember to modify controller: '@Valid' before ModelAttribute, and 'BindingResult result, ' before Model + if(hasErrors(){...}..
     private String firstName;
+    @NotEmpty(message = "{noname}")
     private String lastName;
+    @Pattern(regexp = "^[\\w\\.]+@\\w+\\.\\w+", message = "{invalid.email.address}")
     private String email;
 
     public User(String firstName, String lastName, String email) {

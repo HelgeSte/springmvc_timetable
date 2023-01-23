@@ -1,11 +1,14 @@
 package com.stegemoen.springmvc_timetable.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Project {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO) // avoid duplicate id problem
     private long projectId;
     private String projectName;
     private String description;
