@@ -19,6 +19,10 @@ public class Customer {
     @Pattern(regexp = "^[a-z\\.]+@[a-z]+\\.[a-z]+", message="{invalid.email.address}")
     private String contactEmail;
 
+    /* Date for creation, incase some companies have the same name, but mostly for
+    * playing around with dates:p */
+    //private Date creationDate;
+
     public Customer(String customerName, String contactName, String contactEmail) {
         this.customerName = customerName;
         this.contactName = contactName;

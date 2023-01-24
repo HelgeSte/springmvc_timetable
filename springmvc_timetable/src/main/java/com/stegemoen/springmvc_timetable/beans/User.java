@@ -5,7 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -19,10 +21,14 @@ public class User {
     @Pattern(regexp = "^[\\w\\.]+@\\w+\\.\\w+", message = "{invalid.email.address}")
     private String email;
 
-    public User(String firstName, String lastName, String email) {
+    @NotNull(message = "")
+    private Date dateOfBirth;    // remember to add @InitBinding to controller
+
+    public User(String firstName, String lastName, String email, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public User(){}
@@ -57,6 +63,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override

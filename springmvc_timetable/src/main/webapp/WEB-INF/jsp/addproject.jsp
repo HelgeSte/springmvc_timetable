@@ -38,7 +38,9 @@
         <label>Project name:</label><form:input path="projectName" type="text" /><form:errors path="projectName" cssClass="error"/><br/>
         <label>Description:</label> <form:input path="description" type="text" /><br/>
         <label>Customer:</label><form:input path="customer" type="text"/><form:errors path="customer" cssClass="error"/><br/>
-        <label>Project manager</label>  <form:input path="projectManager" type="text" />
+        <label>Project manager</label>  <form:input path="projectManager" type="text" /><br/>
+        <label>Startup date</label>  <form:input path="startupDate" type="date" /><form:errors path="startupDate" cssClass="error"/><br/>
+        <label>Deadline</label>  <form:input path="deadline" type="date" /><br />
         <input type="submit" value="ADD PROJECT" />
     </form:form>
     <div><a href="/projects">Cancel</a></div>
