@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Project {
@@ -17,6 +19,9 @@ public class Project {
     @NotEmpty(message="{noname}")
     private String customer;
     private String projectManager;
+    @NotNull(message = "Project cannot be created without a startupdate")
+    private Date startupDate; // Check if a default date (date now) can be added to the form
+    private Date deadline;    // Can be null
 
     public Project(long projectId, String projectName, String description, String projectManager) {
         this.projectId = projectId;
@@ -65,6 +70,22 @@ public class Project {
 
     public void setCustomer(String customer) {
         this.customer = customer;
+    }
+
+    public Date getStartupDate() {
+        return startupDate;
+    }
+
+    public void setStartupDate(Date startupDate) {
+        this.startupDate = startupDate;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
     }
 
     @Override
