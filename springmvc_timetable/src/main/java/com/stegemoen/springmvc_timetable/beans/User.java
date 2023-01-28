@@ -18,7 +18,8 @@ public class User {
     private String firstName;
     @NotEmpty(message = "{noname}")
     private String lastName;
-    @Pattern(regexp = "^[\\w\\.]+@\\w+\\.\\w+", message = "{invalid.email.address}")
+    @Pattern(regexp = "^[\\w\\.]+@\\w+\\.\\w+", // Can '?='/positive lookahead be used here(Se Mastering Regular Expressions by Friedl)
+            message = "{invalid.email.address}")
     private String email;
 
     @NotNull(message = "")
